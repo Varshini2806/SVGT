@@ -1,0 +1,259 @@
+/* Variables for consistency */
+:root {
+  --primary-blue: #2563eb;
+  --bg-light: #f8fafc;
+  --border-color: #e2e8f0;
+  --text-dark: #1e293b;
+  --text-muted: #64748b;
+  --success-green: #059669;
+  --danger-red: #dc2626;
+  --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.order-view-screen {
+  padding: 40px 24px;
+  background: var(--bg-light);
+  min-height: 100vh;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Header Section */
+.view-header {
+  max-width: 1200px;
+  margin: 0 auto 30px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.btn-back {
+  padding: 8px 16px;
+  background: white;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  color: var(--text-muted);
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s;
+}
+
+.btn-back:hover {
+  border-color: var(--primary-blue);
+  color: var(--primary-blue);
+  background: #eff6ff;
+}
+
+.view-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin: 0;
+  flex: 1;
+}
+
+/* Status Badges */
+.status-badge {
+  padding: 6px 16px;
+  border-radius: 99px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.status-pending { background: #fef3c7; color: #92400e; }
+.status-shipped { background: #dbeafe; color: #1e40af; }
+.status-delivered { background: #d1fae5; color: #065f46; }
+.status-cancelled { background: #fee2e2; color: #991b1b; }
+
+/* Grid Layout */
+.order-details-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Card Styling */
+.details-card {
+  background: white;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--card-shadow);
+  overflow: hidden;
+  margin-bottom: 24px;
+}
+
+.card-header {
+  padding: 16px 24px;
+  background: #ffffff;
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-header h2 {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.card-body {
+  padding: 24px;
+}
+
+/* Items Table */
+.items-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.items-table th {
+  text-align: left;
+  padding: 12px 10px;
+  font-size: 12px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  border-bottom: 2px solid var(--bg-light);
+}
+
+.items-table td {
+  padding: 16px 10px;
+  border-bottom: 1px solid var(--bg-light);
+  vertical-align: middle;
+}
+
+.item-name { font-weight: 600; color: var(--text-dark); }
+.item-category { font-size: 12px; color: var(--text-muted); }
+.item-quantity { font-weight: 700; color: var(--primary-blue); }
+.item-total { font-weight: 700; color: var(--text-dark); }
+
+/* Order Summary (Grand Total) */
+.order-summary {
+  margin-top: 20px;
+  padding: 20px;
+  background: var(--bg-light);
+  border-radius: 8px;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.total-row span:first-child {
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.total-amount {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--success-green);
+}
+
+/* Info Rows (Sidebar Content) */
+.info-row {
+  display: flex;
+  padding: 12px 0;
+  border-bottom: 1px solid #f8fafc;
+}
+
+.info-row:last-child { border-bottom: none; }
+
+.info-label {
+  width: 100px;
+  font-size: 13px;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.info-value {
+  flex: 1;
+  font-size: 13px;
+  color: var(--text-dark);
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+/* Admin Action Buttons */
+.status-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.status-btn {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  background: white;
+  font-weight: 600;
+  font-size: 13px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.2s;
+}
+
+.status-btn:hover:not(:disabled) {
+  background: var(--bg-light);
+  border-color: var(--primary-blue);
+  color: var(--primary-blue);
+}
+
+.status-btn.active {
+  background: var(--primary-blue);
+  color: white;
+  border-color: var(--primary-blue);
+}
+
+.status-btn.cancelled.active {
+  background: var(--danger-red);
+  border-color: var(--danger-red);
+}
+
+.status-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Plumber Special Styling */
+.plumber-service-card {
+  border-left: 4px solid var(--primary-blue);
+}
+
+.service-date {
+  color: var(--primary-blue);
+  background: #eff6ff;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.service-fee {
+  color: var(--success-green);
+  font-size: 15px;
+}
+
+/* Loading/Error States */
+.loading, .error-container {
+  text-align: center;
+  padding: 100px;
+  color: var(--text-muted);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .order-details-container {
+    grid-template-columns: 1fr !important;
+  }
+}
